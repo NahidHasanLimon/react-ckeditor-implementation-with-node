@@ -2,8 +2,6 @@ import React, { Component, useState } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import parse from 'html-react-parser';
-import Sample from './components/Sample';
-import SampleClassComponent from './components/SampleClassComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios"; 
 import { Link } from "react-router-dom";
@@ -97,11 +95,6 @@ function uploadPlugin(editor) {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );
                     } }
-                    // onChange={ ( event, editor ) => {
-                    //     const data = editor.getData();
-                    //     console.log( { event, editor, data } );
-                    //     handleChange(event,editor)
-                    // } },
                     onChange={handleChange}
                     onBlur={ ( event, editor ) => {
                         console.log( 'Blur.', editor );
@@ -113,7 +106,6 @@ function uploadPlugin(editor) {
                 <input className='btn-primary' type='submit' value='Submit ' />
                    
                 </form>
-                {/* <button onClick={()=> showData(!addedData)}> {addedData ? 'hide' : 'show'} </button> */}
                 <div>Limon div :  {parse(addData) }</div>
             </div>
         );
